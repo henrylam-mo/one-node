@@ -23,7 +23,7 @@ publicKey=$(echo "$keyPair" | grep "Public key" | awk '{print $3}')
 sed -i "s/YOUR_PRIVATE_KEY/$privateKey/g" config.json
 shortId=$(openssl rand -hex 4)
 sed -i "s/YOUR_SHORT_ID/$shortId/g" config.json
-vlessUrl="vless://$UUID@$DOMAIN:$PORT?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=$publicKey&sid=$shortId&spx=%2F&type=tcp&headerType=none#lunes-reality"
+vlessUrl="vless://$UUID@$DOMAIN:$PORT?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&fp=edge&pbk=$publicKey&sid=$shortId&spx=%2F&type=tcp&headerType=none#lunes-reality"
 echo $vlessUrl > /home/container/node.txt
 
 mkdir -p /home/container/h2
